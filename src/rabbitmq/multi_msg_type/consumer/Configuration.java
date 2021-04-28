@@ -15,7 +15,7 @@ public class RabbitConfiguration {
   
   @Bean
   public FanoutExchange exchange() {
-    return new FanoutExchange("e", true, false);
+    return new FanoutExchange("e.name", true, false);
   }
   
   @Bean
