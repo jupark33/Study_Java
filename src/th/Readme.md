@@ -1,0 +1,14 @@
+
+Sync Async
+Blocking Non-Blocking
+
+Async는 Callback을 사용함.
+호출하는 측에서 호출받는 측으로 Callback 함수이름을 알려준다.
+
+Async Blocking
+호출하는 측에서는 Callback 이 실행되기 전에는 다른 일을 하지 못한다.
+
+Async Non-Blockiing
+호출받는 측에서 (거의) 바로 리턴하고, 작업이 끝나면 Callback 함수를 호출 해준다.
+따라서 호출하는 측에서 다른 일을 할 수 있다. (바로 리턴 받으므로)
+ 
