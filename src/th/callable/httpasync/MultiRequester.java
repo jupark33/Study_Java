@@ -13,5 +13,33 @@ public class MultiRequester {
     private String stTime;
     private Param param;
 
+    public ReqBill() {
+    }
+
+    public ReqBill(Param param) {
+      this.param = param;
+    }
+
+    @Override
+    public String call() throws Exception {
+      stTime = "시작시간" + new Data() + " ";
+
+      GetResponse gr = new GetResponse();
+      Document doc = gr.get(param.getURL());
+      Element ele = doc.getElementById("Result");
+    }
+  }
+
+  private void action() {
+    List<Param> params = new Param().getParams();
+
+    ExecutorService WORKER_TH_POOL = Executors.newFixedThreadPool(params.size());
+    List<ReqBill> callables = new ArrayList<ReqBill>();
+    for (Param param : params) {
+      callables.add(new ReqBill(param));
+    }
+
+    long lStartTime = System.currentTimeMillis();
+
   }
 } 
