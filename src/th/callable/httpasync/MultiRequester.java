@@ -40,6 +40,23 @@ public class MultiRequester {
     }
 
     long lStartTime = System.currentTimeMillis();
+    System.out.println("시작시간" + new Date());
+    try {
+      List<Future<String>> futures = WORKER_TH_POOL.invokeAll(callables);
+      for (Future<String> future : futures)
+        System.out.println("MultiRequester.action(), future : " + future.get());
+      WORKER_TH_POOL.shutdown();
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    } catch (ExecutionException e) {
+      e.printStackTrace();
+    }
 
+    long lEndTime = System.currentTimeMillis();
+    System.out.println("경과시간 :" + (lEndTime - lStartTime) / 1000.0);
+  }
+
+  public static void main(String[] args) {
+    new MultiRequester().action(false);
   }
 } 
