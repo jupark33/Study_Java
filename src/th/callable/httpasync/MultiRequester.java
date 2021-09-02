@@ -8,6 +8,9 @@ import java.util.concurrent.Future;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+/**
+ * 스레드풀을 이용한 Http Request 를 Aync 방식으로 동시 실행
+ */
 public class MultiRequester {
   class ReqBill implements Callable<String> {
     private String stTime;
