@@ -2,6 +2,16 @@
 Sync Async
 Blocking Non-Blocking
 
+Sync는 return을 사용함
+
+Sync Blocking
+호출하는 측에서는 return 받기 전에는 다른 일을 할 수 없다.
+
+Sync Non-Blocking
+호출받는 측에서 (거의) 바로 리턴한다. 호출받는 측에서는 일을 시작한다.
+호출하는 측에서 일이 끝났는지 물어본다. 
+
+/////////////////////////
 Async는 Callback을 사용함.
 호출하는 측에서 호출받는 측으로 Callback 함수이름을 알려준다.
 
